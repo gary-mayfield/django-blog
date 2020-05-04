@@ -1,10 +1,12 @@
+{% load static %}
 <html>
-    <div>
-        <h1><a href="/">TIL</a></h1>
-    </div>
+    <head>
+        <title>Today I Learned</title>
+        <link rel="stylesheet" href="{% static 'css/myblog.css' %}">
+    </head>
     
     {% for post in posts %}
-        <div>
+        <div class='container'>
             <p>published: {{ post.published_date }}</p>
             <h2><a href="">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
